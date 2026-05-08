@@ -1972,7 +1972,12 @@
 								período de adaptación.
 							</p>
 						</div>
-						<img src="birds_lila_largo.svg" alt="" class="value-card__bird" aria-hidden="true" />
+						<img
+							src="birds_lila_largo.svg"
+							alt=""
+							class="value-card__bird"
+							aria-hidden="true"
+						/>
 					</article>
 
 					<article class="value-card reveal" data-delay="2">
@@ -1985,7 +1990,12 @@
 								la rigidez de las opciones baratas.
 							</p>
 						</div>
-						<img src="birds_lila_corto.svg" alt="" class="value-card__bird value-card__bird--sm" aria-hidden="true" />
+						<img
+							src="birds_lila_corto.svg"
+							alt=""
+							class="value-card__bird value-card__bird--sm"
+							aria-hidden="true"
+						/>
 					</article>
 
 					<article class="value-card reveal" data-delay="3">
@@ -1998,7 +2008,12 @@
 								la sensatez económica.
 							</p>
 						</div>
-						<img src="birds_lila_mediano.svg" alt="" class="value-card__bird value-card__bird--flip" aria-hidden="true" />
+						<img
+							src="birds_lila_mediano.svg"
+							alt=""
+							class="value-card__bird value-card__bird--flip"
+							aria-hidden="true"
+						/>
 					</article>
 				</div>
 			</div>
@@ -2552,6 +2567,8 @@
 					}
 					dx = (cw - dw) / 2;
 					dy = (ch - dh) / 2;
+					if (!isMobile()) dx -= cw * 0.06;
+					else dx -= cw * 0.015;
 					ctx.drawImage(img, dx, dy, dw, dh);
 				}
 
