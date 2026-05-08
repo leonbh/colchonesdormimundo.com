@@ -2521,15 +2521,20 @@
 
 				function resizeCanvas() {
 					if (!canvas) return;
-					const dpr = Math.min(window.devicePixelRatio || 1, 2);
+					const dpr = window.devicePixelRatio || 1;
 					canvas.width = canvas.clientWidth * dpr;
 					canvas.height = canvas.clientHeight * dpr;
+					ctx.scale(dpr, dpr);
 				}
 				if (canvas) resizeCanvas();
-				window.addEventListener('resize', resizeCanvas);
+				window.addEventListener('resize', () => {
+					resizeCanvas();
+					if (framesAvailable) drawFrame(lastIdx);
+				});
 
 				const images = [];
 				let framesAvailable = false;
+				let lastIdx = 0;
 
 				function drawFrame(idx) {
 					if (
@@ -2539,9 +2544,11 @@
 						images[idx].naturalWidth === 0
 					)
 						return;
+					lastIdx = idx;
 					const img = images[idx];
-					const cw = canvas.width,
-						ch = canvas.height;
+					// usar dimensiones CSS para el layout (ctx.scale ya maneja el DPR)
+					const cw = canvas.clientWidth;
+					const ch = canvas.clientHeight;
 					ctx.clearRect(0, 0, cw, ch);
 					const ir = img.naturalWidth / img.naturalHeight;
 					const cr = cw / ch;
