@@ -1,0 +1,1733 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>BiRDY — Suavidad para un sueño más placentero | Dormimundo</title>
+<meta name="description" content="Colchón BiRDY. Capitonado de fibra hueca, resortes Bonell de acero alto carbono y tecnología Multifoam. El mejor descanso al alcance de todos. Disponible en Soriana." />
+<meta name="keywords" content="colchon BiRDY, colchon ortopedico, Dormimundo, colchon Bonell, colchon Multifoam, colchon Soriana" />
+<meta property="og:title" content="BiRDY — Suavidad para un sueño más placentero" />
+<meta property="og:description" content="Cinco capas. Una sola promesa: descansar mejor." />
+<meta property="og:image" content="Birdy.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+<style>
+/* =========================================================
+   TOKENS DE DISEÑO
+   Paleta lavanda cálida inspirada en el producto.
+   ========================================================= */
+:root{
+  --c-ink:        #1F1230;
+  --c-ink-soft:   #5C4E6E;
+  --c-mute:       #897C9C;
+  --c-line:       #E5DCEF;
+
+  --c-purple-1:   #5B2D8E;
+  --c-purple-2:   #7A4DAB;
+  --c-purple-3:   #9B7AC7;
+  --c-lavender-1: #C9A9DC;
+  --c-lavender-2: #D4A8E0;
+  --c-lavender-3: #E8D5F0;
+  --c-lavender-4: #F5EEFB;
+  --c-cloud:      #FBF7FE;
+  --c-bone:       #FFFFFF;
+  --c-blue-gray:  #8A9BB5;
+  --c-warm:       #F8E9F2;
+
+  --f-display: "Raleway", system-ui, sans-serif;
+  --f-body:    "DM Sans", system-ui, sans-serif;
+
+  --maxw:    1280px;
+  --gutter:  clamp(20px, 5vw, 56px);
+  --r-sm:    6px;
+  --r-md:    14px;
+  --r-lg:    28px;
+
+  --ease-out: cubic-bezier(.16,.84,.3,1);
+  --ease-in:  cubic-bezier(.5,0,.7,.4);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family: var(--f-body);
+  color: var(--c-ink);
+  background: var(--c-cloud);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img,svg{ display:block; max-width:100%; }
+button{ font: inherit; color: inherit; background:none; border:0; cursor:pointer; }
+a{ color:inherit; text-decoration:none; }
+::selection{ background: var(--c-purple-1); color: var(--c-bone); }
+
+h1,h2,h3,h4{ font-family: var(--f-display); font-weight:600; letter-spacing:-0.01em; margin:0; text-wrap: balance; }
+p{ margin:0; text-wrap: pretty; }
+
+.container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* Wordmark BiRDY: la "i" siempre ligera */
+.wordmark{
+  font-family: var(--f-display);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  display:inline-block;
+}
+.wordmark i{ font-style: normal; font-weight: 400; opacity:.85; }
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav{
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 80;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 18px var(--gutter);
+  background: linear-gradient(180deg, rgba(251,247,254,.85), rgba(251,247,254,0));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background .4s var(--ease-out);
+}
+.nav__brand{
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+}
+.nav__brand i{ font-style: normal; font-weight: 400; }
+.nav__sub{
+  font-family: var(--f-body);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  margin-top: 2px;
+  line-height: 1;
+}
+.nav__links{
+  display:none;
+  gap: 28px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+}
+.nav__links a{ position:relative; padding: 6px 0; }
+.nav__links a::after{
+  content:""; position:absolute; left:0; right:0; bottom:0;
+  height:1px; background: var(--c-purple-1);
+  transform: scaleX(0); transform-origin: right;
+  transition: transform .4s var(--ease-out);
+}
+.nav__links a:hover::after{ transform: scaleX(1); transform-origin: left; }
+@media (min-width: 880px){
+  .nav__links{ display:flex; }
+}
+
+/* =========================================================
+   HERO — imagen de producto sticky + texto
+   ========================================================= */
+.hero{
+  position: relative;
+  height: 300vh;
+  background: var(--c-cloud);
+}
+.hero__sticky{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 30% 20%, rgba(212,168,224,.35), transparent 60%),
+    radial-gradient(100% 60% at 80% 90%, rgba(91,45,142,.22), transparent 60%),
+    linear-gradient(180deg, #FBF7FE 0%, #F2E8FA 100%);
+}
+
+/* canvas para animación de frames (opcional) */
+.hero__canvas{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity .6s var(--ease-out);
+}
+.hero__canvas.is-ready{ opacity: 1; }
+
+/* imagen de producto real como fondo del hero */
+.hero__product{
+  position: absolute; inset: 0;
+  display:grid; place-items:center;
+  pointer-events:none;
+}
+.hero__product-img{
+  width: min(82vw, 680px);
+  height: auto;
+  object-fit: contain;
+  opacity: .95;
+  transition: transform .12s linear;
+  filter: drop-shadow(0 40px 80px rgba(91,45,142,.18));
+}
+
+/* Overlay tipográfico */
+.hero__overlay{
+  position: absolute; inset: 0;
+  display:flex; flex-direction:column;
+  justify-content: space-between;
+  padding: clamp(80px, 14vh, 140px) var(--gutter) clamp(40px, 8vh, 80px);
+  pointer-events: none;
+  color: var(--c-ink);
+  transition: opacity .15s linear;
+}
+.hero__eyebrow{
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--c-purple-1);
+  display:flex; align-items:center; gap: 12px;
+}
+.hero__eyebrow::before{
+  content:""; width: 32px; height:1px; background: var(--c-purple-1);
+}
+.hero__wordmark{
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(80px, 22vw, 240px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--c-ink);
+  margin-top: 12px;
+  text-shadow: 0 1px 0 rgba(255,255,255,.4);
+}
+.hero__wordmark i{
+  font-style: normal;
+  font-weight: 300;
+  color: var(--c-purple-1);
+  display:inline-block;
+  transform: translateY(-0.04em);
+}
+.hero__bottom{
+  display:flex; align-items:end; justify-content: space-between; gap: 24px;
+  flex-wrap: wrap;
+}
+.hero__tagline{
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: clamp(18px, 3.4vw, 28px);
+  line-height: 1.25;
+  max-width: 18ch;
+  color: var(--c-ink);
+}
+.hero__scroll{
+  display:flex; align-items:center; gap: 10px;
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+}
+.hero__scroll-line{
+  position: relative;
+  width: 1px; height: 56px;
+  background: rgba(91,45,142,.2);
+  overflow: hidden;
+}
+.hero__scroll-line::after{
+  content:""; position:absolute; left:0; right:0; top:-30%;
+  height: 30%;
+  background: var(--c-purple-1);
+  animation: scrollDot 2.2s cubic-bezier(.6,0,.4,1) infinite;
+}
+@keyframes scrollDot{
+  0%   { transform: translateY(0); }
+  60%  { transform: translateY(220%); }
+  100% { transform: translateY(220%); }
+}
+
+/* aves decorativas */
+.hero__birds{
+  position: absolute;
+  top: 18%; right: 8%;
+  width: 140px;
+  opacity: .55;
+  pointer-events: none;
+}
+@media (max-width: 640px){
+  .hero__birds{ width: 90px; top: 22%; right: 6%; }
+}
+
+/* outro */
+.hero__outro{
+  position: absolute; inset: 0;
+  display:grid; place-items:center;
+  pointer-events:none;
+  opacity: 0;
+  transition: opacity .5s var(--ease-out);
+  padding: var(--gutter);
+}
+.hero__outro.is-on{ opacity: 1; }
+.hero__outro-text{
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: clamp(22px, 4vw, 40px);
+  text-align: center;
+  max-width: 18ch;
+  color: var(--c-ink);
+}
+.hero__outro-text strong{ font-weight: 600; color: var(--c-purple-1); }
+
+/* =========================================================
+   SECCIONES — ritmo general
+   ========================================================= */
+section{ position: relative; }
+.section{ padding: clamp(80px, 14vh, 160px) 0; }
+.section--tight{ padding: clamp(56px, 10vh, 110px) 0; }
+
+.eyebrow{
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--c-purple-1);
+  display:flex; align-items:center; gap: 12px;
+  margin-bottom: 18px;
+}
+.eyebrow::before{ content:""; width: 28px; height:1px; background: var(--c-purple-1); }
+
+.h-display{
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(34px, 6vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.h-display em{ font-style: italic; font-weight: 300; color: var(--c-purple-1); }
+
+.lead{
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: clamp(18px, 2.4vw, 22px);
+  line-height: 1.45;
+  color: var(--c-ink-soft);
+  max-width: 52ch;
+  margin-top: 20px;
+}
+
+/* entrada animada */
+.reveal{
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+}
+.reveal.is-in{ opacity: 1; transform: none; }
+.reveal[data-delay="1"]{ transition-delay: .08s; }
+.reveal[data-delay="2"]{ transition-delay: .16s; }
+.reveal[data-delay="3"]{ transition-delay: .24s; }
+.reveal[data-delay="4"]{ transition-delay: .32s; }
+.reveal[data-delay="5"]{ transition-delay: .40s; }
+
+.band{ background: linear-gradient(180deg, var(--c-cloud), var(--c-lavender-4)); }
+.band--deep{ background: linear-gradient(180deg, var(--c-lavender-4), var(--c-cloud)); }
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+.intro{
+  text-align: center;
+  background: var(--c-cloud);
+}
+.intro__inner{ max-width: 760px; margin: 0 auto; }
+.intro__divider{
+  width: 1px; height: 80px;
+  background: linear-gradient(180deg, transparent, var(--c-purple-1), transparent);
+  margin: 0 auto 40px;
+}
+
+/* =========================================================
+   CAPAS — sección estrella
+   ========================================================= */
+.layers{ background: var(--c-cloud); position: relative; }
+.layers__head{ text-align: left; max-width: 720px; margin-bottom: 56px; }
+.layers__grid{ display: grid; gap: 48px; }
+@media (min-width: 880px){
+  .layers__grid{ grid-template-columns: 1.05fr 1fr; gap: 80px; align-items: start; }
+}
+
+/* Diagrama del colchón */
+.diagram{
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 50% 100%, rgba(212,168,224,.4), transparent 65%),
+    var(--c-bone);
+  border-radius: var(--r-lg);
+  padding: 40px 28px;
+  border: 1px solid var(--c-line);
+  overflow: hidden;
+}
+@media (min-width: 880px){
+  .diagram{ position: sticky; top: 100px; padding: 56px 40px; }
+}
+.diagram__stack{ display: flex; flex-direction: column; gap: 6px; }
+.diagram__layer{
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  font-family: var(--f-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out), filter .5s var(--ease-out);
+  border: 1px solid rgba(0,0,0,.04);
+  -webkit-tap-highlight-color: transparent;
+  min-height: 44px;
+}
+.diagram__layer .num{
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 12px;
+  color: rgba(0,0,0,.45);
+}
+.diagram__layer .arrow{
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity .3s, transform .3s;
+}
+.diagram__layer.is-active{
+  transform: translateX(8px) scale(1.015);
+  box-shadow: 0 18px 40px -18px rgba(91,45,142,.45);
+  z-index: 2;
+}
+.diagram__layer.is-active .arrow{ opacity:1; transform: translateX(0); }
+.diagram__layer:hover{ filter: brightness(1.04); }
+
+.layer-1{ background: linear-gradient(180deg, #EFE2F6, #E2CDEE); height: 38px; }
+.layer-2{ background: linear-gradient(180deg, #D9C5E7, #C9A9DC); height: 22px; }
+.layer-3{ background: linear-gradient(180deg, #B89BD3, #9B7AC7); height: 90px; color:#fff; }
+.layer-3 .num{ color: rgba(255,255,255,.55); }
+.layer-4{ background: linear-gradient(180deg, #7A4DAB, #5B2D8E); height: 110px; color:#fff; position:relative; overflow:hidden; }
+.layer-4 .num{ color: rgba(255,255,255,.55); }
+.layer-4::before{
+  content:"";
+  position:absolute; inset: 14px 24px;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 8px, rgba(255,255,255,.10) 8px 9px),
+    repeating-linear-gradient(-45deg, transparent 0 8px, rgba(255,255,255,.10) 8px 9px);
+  opacity: .9;
+  pointer-events:none;
+}
+.layer-5{ background: linear-gradient(180deg, #6E7E96, #8A9BB5); height: 18px; color:#fff; }
+.layer-5 .num{ color: rgba(255,255,255,.6); }
+
+.diagram__caption{
+  position: absolute;
+  bottom: 18px; left: 28px;
+  display:flex; align-items:center; gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+}
+.diagram__caption span{ width: 18px; height: 1px; background: var(--c-mute); }
+
+/* Panel info */
+.layer-panel{ position: relative; }
+.layer-panel__list{ display: flex; flex-direction: column; gap: 4px; }
+.layer-card{
+  border-top: 1px solid var(--c-line);
+  padding: 22px 0 22px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px 18px;
+  align-items: start;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .3s;
+  position: relative;
+}
+.layer-card:last-child{ border-bottom: 1px solid var(--c-line); }
+.layer-card__num{
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--c-mute);
+  padding-top: 2px;
+  min-width: 28px;
+}
+.layer-card__title{
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(20px, 3vw, 26px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.layer-card__sub{
+  font-family: var(--f-body);
+  font-size: 13px;
+  color: var(--c-purple-1);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+.layer-card__icon{
+  width: 28px; height: 28px;
+  display:grid; place-items:center;
+  color: var(--c-purple-1);
+  transition: transform .4s var(--ease-out);
+}
+.layer-card.is-active .layer-card__icon{ transform: rotate(45deg); }
+.layer-card__body{
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .5s var(--ease-out);
+  overflow: hidden;
+}
+.layer-card.is-active .layer-card__body{ grid-template-rows: 1fr; }
+.layer-card__body > div{ overflow: hidden; min-height: 0; }
+.layer-card__desc{
+  margin-top: 10px;
+  color: var(--c-ink-soft);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.layer-card__specs{
+  margin-top: 18px;
+  display: flex; flex-wrap: wrap;
+  gap: 8px;
+}
+.spec-pill{
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--c-lavender-4);
+  color: var(--c-purple-1);
+  border: 1px solid var(--c-lavender-3);
+}
+
+/* =========================================================
+   PROPUESTA DE VALOR
+   ========================================================= */
+.value{ background: linear-gradient(180deg, var(--c-cloud) 0%, var(--c-lavender-4) 100%); }
+.value__head{ display: grid; gap: 16px; margin-bottom: 64px; }
+@media (min-width: 880px){
+  .value__head{ grid-template-columns: 1fr 1fr; align-items: end; gap: 60px; }
+  .value__head .lead{ margin-top: 0; }
+}
+.value__grid{ display: grid; gap: 22px; }
+@media (min-width: 720px){ .value__grid{ grid-template-columns: repeat(3, 1fr); } }
+.value-card{
+  background: var(--c-bone);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  padding: 32px 28px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out);
+}
+.value-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 30px 50px -30px rgba(91,45,142,.3);
+}
+.value-card__num{
+  font-family: var(--f-display);
+  font-weight: 200;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--c-purple-1);
+  letter-spacing: -0.04em;
+}
+.value-card__title{
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.15;
+  margin-top: 22px;
+  letter-spacing: -0.01em;
+}
+.value-card__desc{ margin-top: 12px; color: var(--c-ink-soft); font-size: 15px; }
+.value-card__bird{
+  position: absolute;
+  bottom: 18px; right: 18px;
+  width: 60px;
+  color: var(--c-lavender-2);
+  opacity: .7;
+}
+
+/* =========================================================
+   COMPARATIVA
+   ========================================================= */
+.compare{ background: var(--c-cloud); }
+.compare__head{ max-width: 760px; margin-bottom: 56px; }
+.compare__cols{ display: grid; gap: 18px; }
+@media (min-width: 820px){
+  .compare__cols{ grid-template-columns: 1fr 1.1fr; gap: 24px; align-items: stretch; }
+}
+.compare-col{
+  border-radius: var(--r-lg);
+  padding: 36px 28px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.compare-col--basic{
+  background: var(--c-bone);
+  border: 1px solid var(--c-line);
+  color: var(--c-ink-soft);
+}
+.compare-col--birdy{
+  background: linear-gradient(165deg, #2A1648 0%, #5B2D8E 60%, #7A4DAB 100%);
+  color: var(--c-bone);
+  box-shadow: 0 30px 60px -30px rgba(91,45,142,.55);
+}
+.compare-col__label{
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+.compare-col__name{
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 28px;
+  margin-top: 6px;
+  letter-spacing: -0.01em;
+}
+.compare-col--birdy .compare-col__name i{ font-style: normal; font-weight: 300; }
+.compare-col__list{
+  list-style: none; padding: 0; margin: 28px 0 0;
+  display: flex; flex-direction: column; gap: 0;
+}
+.compare-col__list li{
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid currentColor;
+  border-color: rgba(0,0,0,.08);
+  align-items: start;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.compare-col--birdy .compare-col__list li{ border-color: rgba(255,255,255,.14); }
+.compare-col__list li:first-child{ border-top: 0; }
+.compare-col__list .dim{ display:block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; margin-bottom: 3px; }
+.compare-col__icon{ width: 18px; height:18px; margin-top:2px; flex-shrink: 0; }
+.compare-col--birdy .compare-col__icon{ color: var(--c-lavender-2); }
+.compare-col--basic .compare-col__icon{ color: var(--c-mute); }
+.compare-col__badge{
+  position: absolute;
+  top: 24px; right: 24px;
+  font-family: var(--f-body);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  color: var(--c-bone);
+}
+
+/* =========================================================
+   CUIDADO
+   ========================================================= */
+.care{ background: var(--c-lavender-4); }
+.care__head{ max-width: 720px; margin-bottom: 56px; }
+.care__grid{ display: grid; gap: 4px; grid-template-columns: 1fr; }
+@media (min-width: 720px){ .care__grid{ grid-template-columns: 1fr 1fr; } }
+.care-card{
+  background: var(--c-bone);
+  padding: 36px 28px 32px;
+  border-radius: 4px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 220px;
+  position: relative;
+  overflow: hidden;
+  transition: background .4s;
+}
+.care-card:hover{ background: var(--c-cloud); }
+.care-card__num{
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  color: var(--c-purple-1);
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+}
+.care-card__num::before{ content:""; width: 24px; height: 1px; background: var(--c-purple-1); }
+.care-card__icon{ width: 44px; height: 44px; margin-top: 28px; color: var(--c-purple-1); }
+.care-card__title{
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  margin-top: 20px;
+  letter-spacing: -0.01em;
+}
+.care-card__desc{ margin-top: 10px; color: var(--c-ink-soft); font-size: 14px; line-height: 1.55; }
+
+/* =========================================================
+   TAMAÑOS
+   ========================================================= */
+.sizes{ background: var(--c-cloud); overflow: hidden; }
+.sizes__head{ display:flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 56px; flex-wrap: wrap; }
+.sizes__grid{ display: grid; gap: 24px; }
+@media (min-width: 720px){ .sizes__grid{ grid-template-columns: 1fr 1fr; gap: 24px; } }
+.size-card{
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  background: var(--c-bone);
+  padding: 32px 28px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.size-card__label{
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--c-purple-1);
+}
+.size-card__name{
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  margin-top: 6px;
+}
+.size-card__dims{
+  font-family: var(--f-display);
+  font-weight: 200;
+  font-size: clamp(46px, 8vw, 68px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-top: 28px;
+  color: var(--c-ink);
+  display: flex; align-items: baseline; gap: 14px;
+  flex-wrap: wrap;
+}
+.size-card__dims .x{ color: var(--c-purple-1); font-weight: 300; margin: 0 6px; }
+.size-card__unit{
+  font-family: var(--f-body);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+  margin-top: 12px;
+}
+.size-card__visual{
+  position: relative;
+  margin-top: 28px;
+  height: 100px;
+  border: 1px dashed var(--c-line);
+  border-radius: 6px;
+  background: repeating-linear-gradient(135deg, transparent 0 8px, rgba(91,45,142,.05) 8px 9px);
+  overflow: hidden;
+}
+.size-card__rect{
+  position: absolute;
+  bottom: 0; left: 0;
+  background: linear-gradient(180deg, var(--c-lavender-2), var(--c-purple-2));
+  border-radius: 4px 4px 0 0;
+}
+.size-card--ind .size-card__rect{ width: 53%; height: 100%; }
+.size-card--mat .size-card__rect{ width: 71%; height: 100%; }
+.sizes__shared{
+  margin-top: 28px;
+  border-top: 1px solid var(--c-line);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--f-body);
+  font-size: 13px;
+  color: var(--c-ink-soft);
+  letter-spacing: 0.04em;
+}
+.sizes__shared strong{ color: var(--c-ink); font-weight: 500; }
+
+/* =========================================================
+   STORE / CTA
+   ========================================================= */
+.store{
+  background: linear-gradient(170deg, #2A1648 0%, #5B2D8E 100%);
+  color: var(--c-bone);
+  position: relative;
+  overflow: hidden;
+}
+.store__inner{
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.store__eyebrow{
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--c-lavender-2);
+  display:inline-flex; align-items:center; gap: 12px;
+}
+.store__eyebrow::before, .store__eyebrow::after{
+  content:""; width: 24px; height: 1px; background: var(--c-lavender-2);
+}
+.store__title{
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: clamp(34px, 6vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-top: 24px;
+  color: var(--c-bone);
+}
+.store__title strong{ font-weight: 600; }
+.store__sub{
+  margin-top: 22px;
+  color: var(--c-lavender-3);
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.store__logos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.store__logo-label{
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--c-lavender-3);
+  margin-bottom: 8px;
+}
+.store__soriana{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.store__soriana-badge{
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--r-md);
+  padding: 16px 28px;
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: var(--c-bone);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.store__btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 44px;
+  padding: 18px 28px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 999px;
+  font-family: var(--f-body);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-bone);
+  transition: background .3s, border-color .3s, transform .3s;
+  min-height: 44px;
+}
+.store__btn:hover{
+  background: var(--c-bone);
+  color: var(--c-purple-1);
+  border-color: var(--c-bone);
+  transform: translateY(-2px);
+}
+.store__btn svg{ transition: transform .3s; }
+.store__btn:hover svg{ transform: translateX(4px); }
+.store__birds{
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: .25;
+}
+.store__birds svg{ width: 100%; height:100%; }
+
+/* =========================================================
+   DORMIMUNDO — banda de marca
+   ========================================================= */
+.brand-band{
+  background: var(--c-cloud);
+  border-top: 1px solid var(--c-line);
+  padding: 40px var(--gutter);
+  text-align: center;
+}
+.brand-band__inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.brand-band__name{
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+.brand-band__sub{
+  font-family: var(--f-body);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-mute);
+}
+.brand-band__contact{
+  font-family: var(--f-body);
+  font-size: 13px;
+  color: var(--c-ink-soft);
+  margin-top: 4px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{
+  background: var(--c-ink);
+  padding: 48px var(--gutter);
+  text-align: center;
+}
+.footer__brand{
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--c-bone);
+  letter-spacing: -0.01em;
+}
+.footer__brand i{ font-style: normal; font-weight: 400; color: var(--c-lavender-2); }
+.footer__tag{
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--c-lavender-3);
+  margin-top: 8px;
+}
+.footer__legal{
+  font-family: var(--f-body);
+  font-size: 11px;
+  color: var(--c-mute);
+  margin-top: 24px;
+  letter-spacing: 0.04em;
+}
+.footer__dormimundo{
+  font-family: var(--f-body);
+  font-size: 11px;
+  color: var(--c-mute);
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero{ height: 110vh; }
+  .hero__sticky{ position: relative; }
+  .hero__outro{ opacity: 1 !important; position: static; padding: 60px 20px 80px; }
+  .hero__overlay{ position: static; padding: 60px 20px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     NAV
+     ========================================================= -->
+<nav class="nav" aria-label="Principal">
+  <div>
+    <a href="#top" class="nav__brand">B<i>i</i>RDY</a>
+    <div class="nav__sub">por Dormimundo</div>
+  </div>
+  <div class="nav__links">
+    <a href="#capas">Capas</a>
+    <a href="#valor">Por qué BiRDY</a>
+    <a href="#tamanos">Tamaños</a>
+    <a href="#tienda">Dónde comprar</a>
+  </div>
+</nav>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="hero" id="top" aria-label="BiRDY — Suavidad para un sueño más placentero">
+  <div class="hero__sticky">
+
+    <!-- canvas: si existen frames/frame_001.jpg..120.jpg se activa automáticamente -->
+    <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+    <!-- imagen de producto real del colchón BiRDY -->
+    <div class="hero__product" aria-hidden="true">
+      <img
+        class="hero__product-img"
+        id="heroProductImg"
+        src="Birdy.jpg"
+        alt="Colchón BiRDY — diagrama de capas"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+
+    <!-- overlay tipográfico -->
+    <div class="hero__overlay" id="heroOverlay">
+      <div>
+        <div class="hero__eyebrow">Colchón Ortopédico · Dormimundo</div>
+        <h1 class="hero__wordmark">B<i>i</i>RDY</h1>
+      </div>
+
+      <!-- aves decorativas -->
+      <svg class="hero__birds" viewBox="0 0 200 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" style="color:var(--c-purple-1)" aria-hidden="true">
+        <path d="M10 40 Q22 22 34 40 Q46 22 58 40"/>
+        <path d="M70 28 Q80 14 90 28 Q100 14 110 28"/>
+        <path d="M120 50 Q130 38 140 50 Q150 38 160 50"/>
+        <path d="M170 22 Q178 10 186 22"/>
+      </svg>
+
+      <div class="hero__bottom">
+        <p class="hero__tagline">Suavidad para un sueño más placentero.</p>
+        <div class="hero__scroll" aria-hidden="true">
+          <span>Desliza</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- texto outro (al final del scroll del hero) -->
+    <div class="hero__outro" id="heroOutro" aria-hidden="true">
+      <p class="hero__outro-text">Cinco capas. Una sola promesa: <strong>descansar mejor</strong>.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     INTRO
+     ========================================================= -->
+<section class="section section--tight intro band" aria-label="Conoce el interior">
+  <div class="container intro__inner">
+    <div class="intro__divider reveal"></div>
+    <div class="eyebrow reveal" data-delay="1">Lo que está dentro importa</div>
+    <h2 class="h-display reveal" data-delay="2">Cinco capas que <em>trabajan juntas</em> mientras tú duermes.</h2>
+    <p class="lead reveal" data-delay="3" style="margin-left:auto; margin-right:auto;">Cada una resuelve algo distinto: la primera caricia, el soporte que no se hunde, la base que no se mueve. Toca una capa para conocerla.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     CAPAS — sección estrella
+     ========================================================= -->
+<section class="section layers" id="capas" aria-label="Las capas del colchón">
+  <div class="container">
+
+    <header class="layers__head">
+      <div class="eyebrow reveal">Anatomía</div>
+      <h2 class="h-display reveal" data-delay="1">El interior, capa por capa.</h2>
+    </header>
+
+    <div class="layers__grid">
+
+      <!-- Diagrama interactivo del colchón -->
+      <div class="diagram reveal" data-delay="1">
+        <div class="diagram__stack" id="diagramStack">
+          <button class="diagram__layer layer-1" data-layer="0" aria-label="Capa 1: Capitonado">
+            <span class="num">01</span>
+            <span>Capitonado</span>
+            <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="diagram__layer layer-2" data-layer="1" aria-label="Capa 2: Tela superior">
+            <span class="num">02</span>
+            <span>Tela superior</span>
+            <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="diagram__layer layer-3" data-layer="2" aria-label="Capa 3: Espuma de confort">
+            <span class="num">03</span>
+            <span>Espuma de confort</span>
+            <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="diagram__layer layer-4" data-layer="3" aria-label="Capa 4: Núcleo de resortes">
+            <span class="num">04</span>
+            <span>Núcleo de resortes</span>
+            <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="diagram__layer layer-5" data-layer="4" aria-label="Capa 5: Base antiderrapante">
+            <span class="num">05</span>
+            <span>Base antiderrapante</span>
+            <svg class="arrow" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="diagram__caption"><span></span>Vista lateral · 22 cm</div>
+      </div>
+
+      <!-- Panel info: tarjetas expandibles -->
+      <div class="layer-panel">
+        <div class="layer-panel__list" id="layerCards">
+
+          <button class="layer-card is-active" data-layer="0">
+            <span class="layer-card__num">01</span>
+            <div>
+              <h3 class="layer-card__title">Capitonado de Lujo</h3>
+              <div class="layer-card__sub">4 mm espuma + 10 mm fibra hueca</div>
+            </div>
+            <span class="layer-card__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <div class="layer-card__body">
+              <div>
+                <p class="layer-card__desc">La primera sensación al acostarte. Tela 100% Poliéster Súper Suave con Peeler y Delcrón. Diseñado para envolverte desde el primer segundo — cómodo desde la primera noche, sin período de adaptación.</p>
+                <div class="layer-card__specs">
+                  <span class="spec-pill">Espuma 4 mm</span>
+                  <span class="spec-pill">Fibra hueca 10 mm</span>
+                  <span class="spec-pill">100% Poliéster</span>
+                  <span class="spec-pill">Peeler y Delcrón</span>
+                </div>
+              </div>
+            </div>
+          </button>
+
+          <button class="layer-card" data-layer="1">
+            <span class="layer-card__num">02</span>
+            <div>
+              <h3 class="layer-card__title">Tela de Poliéster Circular</h3>
+              <div class="layer-card__sub">Tejido super suave fabricado en circular</div>
+            </div>
+            <span class="layer-card__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <div class="layer-card__body">
+              <div>
+                <p class="layer-card__desc">Tejido circular de alta densidad. Máximo confort al tacto con durabilidad para el uso diario durante años.</p>
+                <div class="layer-card__specs">
+                  <span class="spec-pill">100% Poliéster</span>
+                  <span class="spec-pill">Tejido circular</span>
+                  <span class="spec-pill">Alta resistencia</span>
+                </div>
+              </div>
+            </div>
+          </button>
+
+          <button class="layer-card" data-layer="2">
+            <span class="layer-card__num">03</span>
+            <div>
+              <h3 class="layer-card__title">Espuma Confort Multifoam</h3>
+              <div class="layer-card__sub">Acojinamiento de 60 mm de espuma de poliuretano</div>
+            </div>
+            <span class="layer-card__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <div class="layer-card__body">
+              <div>
+                <p class="layer-card__desc">60 mm de espuma de poliuretano de alta densidad con tecnología Multifoam. Distribuye el peso uniformemente, elimina los puntos de presión y se adapta a la postura de tu cuerpo.</p>
+                <div class="layer-card__specs">
+                  <span class="spec-pill">60 mm espesor</span>
+                  <span class="spec-pill">Alta densidad</span>
+                  <span class="spec-pill">Tecnología Multifoam</span>
+                  <span class="spec-pill">Ortopédico</span>
+                </div>
+              </div>
+            </div>
+          </button>
+
+          <button class="layer-card" data-layer="3">
+            <span class="layer-card__num">04</span>
+            <div>
+              <h3 class="layer-card__title">Resortes Bicónicos Bonell</h3>
+              <div class="layer-card__sub">Acero de alto carbono · Calibre 13</div>
+            </div>
+            <span class="layer-card__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <div class="layer-card__body">
+              <div>
+                <p class="layer-card__desc">Resortes bicónicos de acero de alto carbono, calibre 13, templados con carga eléctrica de alto voltaje. El corazón que da soporte firme y confiable sin la rigidez de las opciones de menor calidad.</p>
+                <div class="layer-card__specs">
+                  <span class="spec-pill">Acero alto carbono</span>
+                  <span class="spec-pill">Calibre 13</span>
+                  <span class="spec-pill">Templado eléctrico</span>
+                  <span class="spec-pill">Sistema Bonell</span>
+                </div>
+              </div>
+            </div>
+          </button>
+
+          <button class="layer-card" data-layer="4">
+            <span class="layer-card__num">05</span>
+            <div>
+              <h3 class="layer-card__title">Base Non Woven Antiderrapante</h3>
+              <div class="layer-card__sub">Tela inferior de alta resistencia</div>
+            </div>
+            <span class="layer-card__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <div class="layer-card__body">
+              <div>
+                <p class="layer-card__desc">Tela inferior Non Woven de alta resistencia. Mantiene el colchón fijo y seguro en cualquier base o superficie durante toda la noche, sin deslizamientos.</p>
+                <div class="layer-card__specs">
+                  <span class="spec-pill">Non Woven</span>
+                  <span class="spec-pill">Alta resistencia</span>
+                  <span class="spec-pill">Antiderrapante</span>
+                </div>
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROPUESTA DE VALOR
+     ========================================================= -->
+<section class="section value" id="valor" aria-label="Por qué BiRDY">
+  <div class="container">
+
+    <header class="value__head">
+      <div>
+        <div class="eyebrow reveal">Por qué B<i style="font-style:normal">i</i>RDY</div>
+        <h2 class="h-display reveal" data-delay="1">Tres razones que <em>se sienten</em> al primer minuto.</h2>
+      </div>
+      <p class="lead reveal" data-delay="2">No prometemos magia. Prometemos las decisiones técnicas correctas, con materiales reales, al precio que merecen estar.</p>
+    </header>
+
+    <div class="value__grid">
+
+      <article class="value-card reveal" data-delay="1">
+        <div class="value-card__num">01</div>
+        <div>
+          <h3 class="value-card__title">Suavidad inmediata</h3>
+          <p class="value-card__desc">El capitonado de fibra hueca te recibe sin pedirte que esperes a que el colchón "se ablande". Cómodo desde la primera noche, sin período de adaptación.</p>
+        </div>
+        <svg class="value-card__bird" viewBox="0 0 100 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M5 22 Q15 8 25 22 Q35 8 45 22"/>
+          <path d="M55 14 Q63 4 71 14"/>
+          <path d="M80 22 Q88 14 96 22"/>
+        </svg>
+      </article>
+
+      <article class="value-card reveal" data-delay="2">
+        <div class="value-card__num">02</div>
+        <div>
+          <h3 class="value-card__title">Soporte inteligente</h3>
+          <p class="value-card__desc">Resortes Bonell de acero alto carbono, calibre 13. Distribuyen tu peso y responden a tu cuerpo — soporte firme y confiable sin la rigidez de las opciones baratas.</p>
+        </div>
+        <svg class="value-card__bird" viewBox="0 0 100 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M5 22 Q15 8 25 22 Q35 8 45 22"/>
+          <path d="M55 18 Q63 6 71 18"/>
+          <path d="M80 22 Q88 14 96 22"/>
+        </svg>
+      </article>
+
+      <article class="value-card reveal" data-delay="3">
+        <div class="value-card__num">03</div>
+        <div>
+          <h3 class="value-card__title">Gran valor</h3>
+          <p class="value-card__desc">Tecnología real — Multifoam, Bonell, fibra hueca — sin el precio inflado de las marcas premium. Mejor descanso, sin renunciar a la sensatez económica.</p>
+        </div>
+        <svg class="value-card__bird" viewBox="0 0 100 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M5 22 Q15 6 25 22 Q35 6 45 22"/>
+          <path d="M55 14 Q65 2 75 14"/>
+          <path d="M82 22 Q90 14 98 22"/>
+        </svg>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     COMPARATIVA
+     ========================================================= -->
+<section class="section compare" aria-label="Comparativa de colchones">
+  <div class="container">
+
+    <header class="compare__head">
+      <div class="eyebrow reveal">Comparativa</div>
+      <h2 class="h-display reveal" data-delay="1">La diferencia <em>está en lo que no se ve</em>.</h2>
+      <p class="lead reveal" data-delay="2">A simple vista, dos colchones se parecen. Por dentro, no.</p>
+    </header>
+
+    <div class="compare__cols">
+
+      <!-- BÁSICO -->
+      <div class="compare-col compare-col--basic reveal" data-delay="1">
+        <div class="compare-col__label">Colchón básico de entrada</div>
+        <div class="compare-col__name">El estándar</div>
+        <ul class="compare-col__list">
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div><span class="dim">Capitonado</span>Sin capitonado</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div><span class="dim">Núcleo</span>Resortes simples</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div><span class="dim">Tela superior</span>Estándar</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div><span class="dim">Espuma de confort</span>Sin capa adicional</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div><span class="dim">Base antiderrapante</span>No</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div><span class="dim">Confort desde día 1</span>No</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- BIRDY -->
+      <div class="compare-col compare-col--birdy reveal" data-delay="2">
+        <span class="compare-col__badge">Estás viendo este</span>
+        <div class="compare-col__label">Colchón B<i style="font-style:normal;font-weight:300">i</i>RDY · Dormimundo</div>
+        <div class="compare-col__name">B<i>i</i>RDY</div>
+        <ul class="compare-col__list">
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><span class="dim">Capitonado</span>Fibra hueca 10 mm + espuma 4 mm</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><span class="dim">Núcleo</span>Bonell de acero alto carbono, calibre 13</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><span class="dim">Tela superior</span>Tejido circular 100% Poliéster Súper Suave</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><span class="dim">Espuma de confort</span>Multifoam 60 mm alta densidad</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><span class="dim">Base antiderrapante</span>Sí · Non Woven alta resistencia</div>
+          </li>
+          <li>
+            <svg class="compare-col__icon" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><span class="dim">Confort desde día 1</span>Sí, sin "tiempo de adaptación"</div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CUIDADO
+     ========================================================= -->
+<section class="section care" aria-label="Cuidado del colchón">
+  <div class="container">
+
+    <header class="care__head">
+      <div class="eyebrow reveal">Cuidado</div>
+      <h2 class="h-display reveal" data-delay="1">Cuídalo y te cuidará <em>por años</em>.</h2>
+    </header>
+
+    <div class="care__grid">
+
+      <article class="care-card reveal" data-delay="1">
+        <div class="care-card__num">Tip 01</div>
+        <svg class="care-card__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 8a14 14 0 1 1-13.4 18"/>
+          <path d="M8 14V6h8"/>
+        </svg>
+        <h3 class="care-card__title">Rótalo cada 3 meses</h3>
+        <p class="care-card__desc">Gíralo de cabeza a pies y voltéalo. Distribuye el desgaste y conserva el confort original por más tiempo.</p>
+      </article>
+
+      <article class="care-card reveal" data-delay="2">
+        <div class="care-card__num">Tip 02</div>
+        <svg class="care-card__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 18h24a4 4 0 1 0-4-4"/>
+          <path d="M6 26h28a4 4 0 1 1-4 4"/>
+          <path d="M6 34h18"/>
+        </svg>
+        <h3 class="care-card__title">Ventila la habitación a diario</h3>
+        <p class="care-card__desc">Abre la ventana al menos 10 minutos cada mañana. La humedad es el enemigo silencioso de cualquier colchón.</p>
+      </article>
+
+      <article class="care-card reveal" data-delay="3">
+        <div class="care-card__num">Tip 03</div>
+        <svg class="care-card__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="6" y="14" width="32" height="16" rx="2"/>
+          <path d="M14 30v4M30 30v4"/>
+          <path d="M10 38l4-4M30 34l4 4"/>
+        </svg>
+        <h3 class="care-card__title">Nunca lo dobles ni lo enrolles</h3>
+        <p class="care-card__desc">Los resortes Bonell están templados para mantener su forma. Doblarlos los deforma de manera permanente e irreversible.</p>
+      </article>
+
+      <article class="care-card reveal" data-delay="4">
+        <div class="care-card__num">Tip 04</div>
+        <svg class="care-card__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 6c-6 8-10 13-10 19a10 10 0 0 0 20 0c0-6-4-11-10-19z"/>
+          <path d="M16 26c0 3 2 5 4 5"/>
+        </svg>
+        <h3 class="care-card__title">Limpia manchas con paño húmedo</h3>
+        <p class="care-card__desc">Paño húmedo y jabón neutro, deja secar en seco después. Nunca lo sumerjas en agua — el núcleo y la base no están hechos para empaparse.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TAMAÑOS
+     ========================================================= -->
+<section class="section sizes" id="tamanos" aria-label="Tamaños disponibles">
+  <div class="container">
+
+    <header class="sizes__head">
+      <div>
+        <div class="eyebrow reveal">Tamaños</div>
+        <h2 class="h-display reveal" data-delay="1">Dos medidas, <em>una misma altura</em>.</h2>
+      </div>
+    </header>
+
+    <div class="sizes__grid">
+
+      <article class="size-card size-card--ind reveal" data-delay="1">
+        <div class="size-card__label">Individual</div>
+        <div class="size-card__name">Para una persona</div>
+        <div class="size-card__dims">
+          <span>1.00</span><span class="x">×</span><span>1.90</span>
+        </div>
+        <div class="size-card__unit">metros</div>
+        <div class="size-card__visual" aria-hidden="true"><div class="size-card__rect"></div></div>
+      </article>
+
+      <article class="size-card size-card--mat reveal" data-delay="2">
+        <div class="size-card__label">Matrimonial</div>
+        <div class="size-card__name">Para dos</div>
+        <div class="size-card__dims">
+          <span>1.35</span><span class="x">×</span><span>1.90</span>
+        </div>
+        <div class="size-card__unit">metros</div>
+        <div class="size-card__visual" aria-hidden="true"><div class="size-card__rect"></div></div>
+      </article>
+
+    </div>
+
+    <div class="sizes__shared reveal" data-delay="3">
+      <div>Altura: <strong>22 cm</strong> en ambas medidas</div>
+      <div>5 capas · 22 cm de altura total</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     STORE / CTA
+     ========================================================= -->
+<section class="section store" id="tienda" aria-label="Dónde comprarlo">
+
+  <div class="store__birds" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" style="color:var(--c-lavender-2)">
+      <path d="M80 120 Q110 80 140 120 Q170 80 200 120"/>
+      <path d="M260 200 Q285 175 310 200 Q335 175 360 200"/>
+      <path d="M900 90 Q925 65 950 90 Q975 65 1000 90"/>
+      <path d="M1040 180 Q1060 160 1080 180 Q1100 160 1120 180"/>
+      <path d="M180 460 Q205 435 230 460 Q255 435 280 460"/>
+      <path d="M820 480 Q845 460 870 480 Q895 460 920 480"/>
+      <path d="M1020 380 Q1040 365 1060 380"/>
+      <path d="M120 280 Q135 268 150 280"/>
+    </svg>
+  </div>
+
+  <div class="container store__inner">
+    <span class="store__eyebrow">Dónde comprarlo</span>
+    <h2 class="store__title reveal">Ya lo encontraste.<br/><strong>Encuéntralo en tienda.</strong></h2>
+    <p class="store__sub reveal" data-delay="1">Disponible en tiendas Soriana en toda la República Mexicana. Pruébalo, asegúrate de que es para ti — para eso están los asesores en piso.</p>
+
+    <div class="store__logos reveal" data-delay="2">
+      <div class="store__soriana">
+        <div class="store__logo-label">Disponible en</div>
+        <div class="store__soriana-badge">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          Soriana
+        </div>
+      </div>
+    </div>
+
+    <a href="https://www.soriana.com" target="_blank" rel="noopener noreferrer" class="store__btn reveal" data-delay="3">
+      Ver en Soriana.com
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <path d="M1 6h13M10 1l4 5-4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- =========================================================
+     BANDA DORMIMUNDO
+     ========================================================= -->
+<div class="brand-band">
+  <div class="brand-band__inner">
+    <div class="brand-band__name">Dormimundo</div>
+    <div class="brand-band__sub">Especialistas del Descanso</div>
+    <div class="brand-band__contact">
+      Blaco Export, S.A. de C.V. · Camino al Cerrillo No. 47, Zona Industrial Lerma, Lerma, Edo. de México
+      <br/>Tel. (728) 282 3000 · <a href="http://www.blacoexport.com.mx" style="color: var(--c-purple-1)">blacoexport.com.mx</a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="footer">
+  <div class="footer__brand">B<i>i</i>RDY</div>
+  <div class="footer__tag">Suavidad para un sueño más placentero.</div>
+  <div class="footer__legal">© Dormimundo · Blaco Export, S.A. de C.V. · Todos los derechos reservados</div>
+  <div class="footer__dormimundo">colchonesdormimundo.com</div>
+</footer>
+
+
+<!-- =========================================================
+     SCRIPTS
+     ========================================================= -->
+<script>
+(function(){
+  'use strict';
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------------------------------------------------------
+  // 1) IntersectionObserver para .reveal
+  // ---------------------------------------------------------
+  const reveals = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || reduceMotion) {
+    reveals.forEach(el => el.classList.add('is-in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(el => io.observe(el));
+  }
+
+  // ---------------------------------------------------------
+  // 2) Capas — sincronizar diagrama y tarjetas
+  // ---------------------------------------------------------
+  const diagramBtns = document.querySelectorAll('.diagram__layer');
+  const layerCards  = document.querySelectorAll('.layer-card');
+
+  function setActiveLayer(idx) {
+    diagramBtns.forEach((b, i) => b.classList.toggle('is-active', i === idx));
+    layerCards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+  }
+  diagramBtns.forEach((b, i) => b.addEventListener('click', () => setActiveLayer(i)));
+  layerCards.forEach((c, i) => c.addEventListener('click', () => {
+    if (c.classList.contains('is-active')) {
+      c.classList.remove('is-active');
+      diagramBtns.forEach(b => b.classList.remove('is-active'));
+    } else {
+      setActiveLayer(i);
+    }
+  }));
+
+  // ---------------------------------------------------------
+  // 3) HERO — canvas de frames (opcional) con fallback
+  //    Coloca frames/frame_001.jpg...frame_120.jpg para activarlo.
+  // ---------------------------------------------------------
+  const TOTAL_FRAMES = 120;
+  const FRAME_PATH   = (n) => `frames/frame_${String(n).padStart(3, '0')}.jpg`;
+
+  const heroSection  = document.querySelector('.hero');
+  const canvas       = document.getElementById('heroCanvas');
+  const ctx          = canvas ? canvas.getContext('2d') : null;
+  const overlay      = document.getElementById('heroOverlay');
+  const outro        = document.getElementById('heroOutro');
+  const productImg   = document.getElementById('heroProductImg');
+
+  function resizeCanvas() {
+    if (!canvas) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width  = canvas.clientWidth  * dpr;
+    canvas.height = canvas.clientHeight * dpr;
+  }
+  if (canvas) resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const images = [];
+  let framesAvailable = false;
+
+  function drawFrame(idx) {
+    if (!ctx || !images[idx] || !images[idx].complete || images[idx].naturalWidth === 0) return;
+    const img = images[idx];
+    const cw = canvas.width, ch = canvas.height;
+    ctx.clearRect(0, 0, cw, ch);
+    const ir = img.naturalWidth / img.naturalHeight;
+    const cr = cw / ch;
+    let dw, dh;
+    if (ir > cr) { dw = cw; dh = cw / ir; }
+    else         { dh = ch; dw = ch * ir; }
+    ctx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+  }
+
+  function loadFrame(i, onLoad, onError) {
+    const img = new Image();
+    img.decoding = 'async';
+    img.onload  = () => onLoad && onLoad(img);
+    img.onerror = () => onError && onError(img);
+    img.src = FRAME_PATH(i + 1);
+    images[i] = img;
+  }
+
+  function bootFrames() {
+    loadFrame(0,
+      () => {
+        framesAvailable = true;
+        canvas.classList.add('is-ready');
+        // ocultar imagen de producto cuando los frames están disponibles
+        if (productImg) productImg.style.opacity = '0';
+        drawFrame(0);
+        for (let i = 1; i < 30; i++) loadFrame(i);
+        setTimeout(() => { for (let i = 30; i < TOTAL_FRAMES; i++) loadFrame(i); }, 800);
+      },
+      () => { framesAvailable = false; }
+    );
+  }
+  if (canvas && !reduceMotion) bootFrames();
+
+  // ---------------------------------------------------------
+  // 4) Scroll progress del hero
+  // ---------------------------------------------------------
+  let ticking = false;
+  let lastP = -1;
+
+  function onScroll() {
+    if (!heroSection || ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const rect    = heroSection.getBoundingClientRect();
+      const total   = heroSection.offsetHeight - window.innerHeight;
+      const scrolled = Math.min(Math.max(-rect.top, 0), total);
+      const p       = total > 0 ? scrolled / total : 0;
+
+      if (Math.abs(p - lastP) > 0.001) {
+        lastP = p;
+        applyHeroProgress(p);
+      }
+      ticking = false;
+    });
+  }
+
+  function applyHeroProgress(p) {
+    // canvas frames
+    if (framesAvailable && ctx) {
+      const idx = Math.min(TOTAL_FRAMES - 1, Math.floor(p * (TOTAL_FRAMES - 1)));
+      drawFrame(idx);
+    }
+
+    // imagen de producto: leve parallax y escala
+    if (!framesAvailable && productImg) {
+      const ty = p * -40;
+      const sc = 1 + p * 0.06;
+      productImg.style.transform = `translateY(${ty}px) scale(${sc})`;
+    }
+
+    // overlay fade en la primera mitad del scroll
+    const overlayP = Math.min(1, p / 0.55);
+    if (overlay) overlay.style.opacity = String(1 - overlayP);
+
+    // outro: aparece en el último 25%
+    if (outro) {
+      const outroP = (p - 0.75) / 0.25;
+      outro.classList.toggle('is-on', outroP > 0);
+      outro.style.opacity = String(Math.max(0, Math.min(1, outroP)));
+    }
+  }
+
+  if (!reduceMotion) {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  } else {
+    if (outro) outro.classList.add('is-on');
+  }
+
+  // ---------------------------------------------------------
+  // 5) Nav: fondo sólido al hacer scroll
+  // ---------------------------------------------------------
+  const nav = document.querySelector('.nav');
+  function navState() {
+    if (!nav) return;
+    nav.style.background = window.scrollY > 80
+      ? 'rgba(251,247,254,.95)'
+      : '';
+  }
+  window.addEventListener('scroll', navState, { passive: true });
+  navState();
+
+})();
+</script>
+
+</body>
+</html>
